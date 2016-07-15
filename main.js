@@ -9,7 +9,7 @@ var mainState = {
 
     create: function() {
 
-      game.stage.backgroundColor = '#71c5cf'
+      game.stage.backgroundColor = '#6182BC'
       game.physics.startSystem(Phaser.Physics.ARCADE);
 
       this.bird = game.add.sprite(100,254, 'bird')
@@ -19,7 +19,7 @@ var mainState = {
       game.physics.arcade.enable(this.bird)
       this.bird.body.gravity.y = 1000
 
-      var spaceKey = game.input.keyboard.addKey(
+      var spaceKey = game.input.keyboard.addKey( 
                 Phaser.Keyboard.SPACEBAR)
 
       spaceKey.onDown.add(this.jump, this)

@@ -9,7 +9,7 @@ var mainState = {
 
     create: function() {
 
-      game.stage.backgroundColor = '#6182BC'
+      game.stage.backgroundColor = '#6182BC '
       game.physics.startSystem(Phaser.Physics.ARCADE);
 
       this.bird = game.add.sprite(100,254, 'bird')
@@ -38,6 +38,9 @@ var mainState = {
       if (this.bird.y < 0 || this.bird.y > 490){
           this.restartGame();
         }
+
+      game.physics.arcade.overlap(
+      this.bird, this.pipes, this.restartGame, null, this);
     },
 
 
@@ -73,7 +76,7 @@ var mainState = {
                 this.addOnePipe(400, i * 60 + 10);
 
                 this.score += 1;
-                this.labelScore.text = this.score;  
+                this.labelScore.text = this.score;
     },
 };
 
